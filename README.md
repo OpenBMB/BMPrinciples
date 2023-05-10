@@ -1,8 +1,8 @@
 # BMPrinciples
-A constantly updated collection of phenomenons observed during the scaling of big foundation models, which may be developed into consensus, principles, or laws in the future
 
-We categorize these phenomena into different aspects during scaling.
+A collection of **observed phenomena and collected experience** by AI communities during the scaling of big foundation models , which may be developed into consensus, principles, or laws by the great minds in the future.
 
+We categorize these phenomena and experience into different aspects during scaling.
 
 1. Scaling of Computation
    1. Computational Optimal Language Model
