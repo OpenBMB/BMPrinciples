@@ -1,7 +1,7 @@
 # BM-Principles
 
 
- 🌟 The large-scale model has proven its potential to lead to true general intelligence. However 😕, due to its rapid rise and development, people have not fully grasped the principles and methods of understanding and training large models. Therefore, in order to learn about large models together, we have decided to collect **new phenomena observed** during training and after training on the large models and summarize them in this repository 📚 in the form of entries. We hope this collection of phenomena observed during the scaling of large models may form future consensuses, principles, or patterns 📝. 
+ 🌟 The big models have proven their potential to lead to general artificial intelligence. However 😕, due to its rapid development, people have not fully grasped the principles of understanding and training large models. Therefore, in order to learn about large models together, we have decided to collect **new phenomena observed on the large models** and summarize them in this repository 📚 in the form of short entries. We hope this collection of phenomena observed during the scaling of large models may form future consensuses, principles, or patterns 📝. 
 
 The repository focuses on two aspects:
 
