@@ -21,6 +21,7 @@ The repo is far from exclusive currently. Let's work together to improve it! ðŸ’
       <img src="figs/1.1.loss_descrease.png" alt="" width="400" height="250">
       
       > [Scaling Laws for Neural Language Models](https://arxiv.org/abs/2001.08361)
+
       > [Scaling Laws for Autoregressive Generative Modeling](https://arxiv.org/abs/2010.14701)
   
    2. **Computational-optimal language model.**
@@ -30,7 +31,7 @@ The repo is far from exclusive currently. Let's work together to improve it! ðŸ’
       
       > [Training Compute-Optimal Large Language Models](https://arxiv.org/abs/2203.15556)
 
-   3. **LLM doesn't converge at optimal compute.**
+   3. **LLM doesn't converge at tokens of optimal computation.**
       - LLM might continue to improve the loss after optimal tokens. 
       - From Llama-7b and Llama-13b's training loss, we can see that continue to improve after 140 B and 260 B parameters.
       <img src="figs/1.3.llm_doesnt_converge.png" alt="" width="350" height="250">
@@ -42,7 +43,7 @@ The repo is far from exclusive currently. Let's work together to improve it! ðŸ’
    
 2. **Optimal Hyperparameters.**
    1. **The best batch size is a function of loss.**
-      - To reach a certain loss, a large batch size requires more compute, a small batch size requires more training steps (i.e., times). The best batch size is a trade-off.
+      - To reach a certain loss, a large batch size requires more computation, a small batch size requires more training steps (i.e., times). The best batch size is a trade-off.
       - Each diagonal line formed by the points represents a training process. The horizontal axis represents the training steps, the vertical axis represents the number of processed tokens, and the color depth represents the loss. The optimal batch size can be considered as the inflection point of each contour line of loss.
       <img src="figs/2.1.best_batch_size.png" alt="" width="660" height="200">
 
@@ -53,26 +54,26 @@ The repo is far from exclusive currently. Let's work together to improve it! ðŸ’
       > [Don't decay the learning rate, increase the batch size](https://arxiv.org/abs/1711.00489)
    
 
-   3. **Cosine scheduler is the prevalent.**
+   3. **Cosine scheduler is prevalent.**
       - Cosine scheduler is the prevalent one, which is better than Noam with the same peak learning rate. Noam decreases more sharply. 
-      - Below is from our experiment for CPM.
+      - Below is our experiment for CPM.
 
        <img src="figs/2.3.scheduler.png" alt="" width="300" height="200"> 
 
    4. **Cosine learning rate's period should be set to the end step.**
       - From 2.3, you might wonder if it is good to keep the learning rate high is good for training. But it's not.
-      - When you want to traing $N$ step, it's best to set the period of scheduler to $N$, not bigger or smaller. 
+      - When you want to train $N$ steps, it's best to set the period of the scheduler to $N$, not bigger or smaller. 
       <img src="figs/2.4.scheduler_period.png" alt="" width="500" height="200">
          
 
 3. **Predictable Scaling.**
    1. **Pass rate on human eval can be predicted with 1/10000 compute.**
-      - It's important to forecast the model's ability before it is trained. OpenAI GPT-4 proposed the first version of predictable scaling. It estimate the Human-eval's pass rate 
-      - Current there is no other public result of predicting the downstream metrics for large models. 
+      - It's important to forecast the model's ability before it is trained. OpenAI GPT-4 proposed the first version of predictable scaling. It estimates the Human-eval's pass rate 
+      - Currently, there is no other public result for predicting the downstream metrics for large models. 
       <img src="figs/3.1.predictable_scaling.png" alt="" width="400" height="250">
    
 4. **Model Architecture**
-   1. **Architectures in a diverse range has a similar pre-training loss.**
+   1. **Architectures in a **diverse range have a similar pre-training loss.**
       
       > [Scaling Laws for Neural Language Models](https://arxiv.org/abs/2001.08361)
    
@@ -82,7 +83,7 @@ The repo is far from exclusive currently. Let's work together to improve it! ðŸ’
    
       > [Scale Efficiently: Insights from Pre-training and Fine-tuning Transformers](https://arxiv.org/pdf/2109.10686.pdf)
 
-   3. **Normalization has not reached consensus, but pre-norm is more popular recently.**
+   3. **Normalization has not reached a consensus, but pre-norm is more popular recently.**
       - Here we list the normalization techniques of publicly known models.
    
       | Model| Normalization |
@@ -112,7 +113,7 @@ The repo is far from exclusive currently. Let's work together to improve it! ðŸ’
       > [DoReMi: Optimizing Data Mixtures Speeds Up Language Model Pretraining](https://arxiv.org/abs/2305.10429)
 
    3. **Code might contribute to reasoning ability.**
-      - There is a wide belief that pre-training on code results in the strong cabability of reasoning. But currently, there is no quantitative verification.
+      - There is a wide belief that pre-training on code results in a strong capability of reasoning. But currently, there is no quantitative verification.
 
       > [How does GPT Obtain its Ability? Tracing Emergent Abilities of Language Models to their Sources](https://yaofu.notion.site/How-does-GPT-Obtain-its-Ability-Tracing-Emergent-Abilities-of-Language-Models-to-their-Sources-b9a57ac0fcf74f30a1ab9e3e36fa1dc1)
 
@@ -134,6 +135,7 @@ The repo is far from exclusive currently. Let's work together to improve it! ðŸ’
       <img src="figs/W1.2.cot.png" alt="" width="300" height="200">
 
       > [Emergent Abilities of Large Language Models](https://arxiv.org/pdf/2206.07682.pdf)
+
       > [Delta Tuning: A Comprehensive Study of Parameter Efficient Methods for Pre-trained Language Model](https://arxiv.org/pdf/2203.06904.pdf)
 
    1. **U-shape scaling**
@@ -157,9 +159,9 @@ The repo is far from exclusive currently. Let's work together to improve it! ðŸ’
       > [Grokking: Generalization Beyond Overfitting on Small Algorithmic Datasets](https://arxiv.org/pdf/2201.02177.pdf)
 
 
-   3. **Modularity emerge in LLM.**
+   3. **Modularity emerges in LLM.**
       - Sparse Activation has been observed in big models.
-      - The sparsity of modules tends to form in early stage.
+      - The sparsity of modules tends to form in an early stage.
       - The sparsity of neurons tends to form later. 
 
       <img src="figs/W2.3.Modularity_Emergence.png" alt="" width="500" height="230">
