@@ -19,6 +19,7 @@ The repo is far from exclusive currently. Let's work together to improve it! ðŸ’
    1. **Training loss decreases predictably.**
       - Training loss can be written as a smooth function of model parameters and computation.
       <img src="figs/1.1.loss_descrease.png" alt="" width="400" height="250">
+      
       > [Scaling Laws for Neural Language Models](https://arxiv.org/abs/2001.08361)
       > [Scaling Laws for Autoregressive Generative Modeling](https://arxiv.org/abs/2010.14701)
   
@@ -33,6 +34,7 @@ The repo is far from exclusive currently. Let's work together to improve it! ðŸ’
       - LLM might continue to improve the loss after optimal tokens. 
       - From Llama-7b and Llama-13b's training loss, we can see that continue to improve after 140 B and 260 B parameters.
       <img src="figs/1.3.llm_doesnt_converge.png" alt="" width="350" height="250">
+      
       > [LLaMA: Open and Efficient Foundation Language Models](https://arxiv.org/abs/2302.13971)
 `
 
@@ -43,8 +45,7 @@ The repo is far from exclusive currently. Let's work together to improve it! ðŸ’
       - To reach a certain loss, a large batch size requires more compute, a small batch size requires more training steps (i.e., times). The best batch size is a trade-off.
       - Each diagonal line formed by the points represents a training process. The horizontal axis represents the training steps, the vertical axis represents the number of processed tokens, and the color depth represents the loss. The optimal batch size can be considered as the inflection point of each contour line of loss.
       <img src="figs/2.1.best_batch_size.png" alt="" width="660" height="200">
-      
-      
+
       > [Scaling Laws for Neural Language Models](https://arxiv.org/abs/2001.08361)
    2. **Large batch size allows a large learning rate,**
       1. Generally, a larger batch size allows a larger learning rate. And the larger learning rate has faster convergence. 
@@ -54,7 +55,7 @@ The repo is far from exclusive currently. Let's work together to improve it! ðŸ’
 
    3. **Cosine scheduler is the prevalent.**
       - Cosine scheduler is the prevalent one, which is better than Noam with the same peak learning rate. Noam decreases more sharply. 
-      - Below is our experiment for CPM.
+      - Below is from our experiment for CPM.
 
        <img src="figs/2.3.scheduler.png" alt="" width="300" height="200"> 
 
