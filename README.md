@@ -144,6 +144,7 @@ The repo is far from exclusive currently. Let's work together to improve it! ðŸ’
       <img src="figs/W1.3.u-shape.png" alt="" width="300" height="250">
 
       > [Inverse scaling can become U-shaped](https://arxiv.org/abs/2211.02011)
+
       > [Inverse Scaling: When Bigger Isn't Better](https://arxiv.org/pdf/2306.09479.pdf)
 
 1. **Training Dynamics.**
