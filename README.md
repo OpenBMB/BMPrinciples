@@ -18,7 +18,7 @@ The repo is far from exclusive currently. Let's work together to improve it! ðŸ’
 1. **Scaling of Computation**
    1. **Training loss decreases predictably.**
       - Training loss can be written as a smooth function of model parameters and computation.
-      <img src="figs/1.1.loss_descrease.png" alt="" width="400" height="250">
+      <img src="figs/H1.1.loss_descrease.png" alt="" width="400" height="250">
       
       > [Scaling Laws for Neural Language Models](https://arxiv.org/abs/2001.08361)
 
@@ -27,14 +27,14 @@ The repo is far from exclusive currently. Let's work together to improve it! ðŸ’
    2. **Computational-optimal language model.**
       - Given a fixed computational budget, if we train an excessively large model, we can only iterate for a very limited number of steps. On the other hand, if we train a model that is too small, the limit of the loss will not be as good as that of a larger model. Therefore, there exists an *optimal model size*, *optimal training compute*, and *optimal tokens*. 
       - From previous experience, it's roughly $20 * N$, where $N$ is the number of model parameters.
-      <img src="figs/1.2.computational_optimal.png" alt="" width="350" height="250">
+      <img src="figs/H1.2.computational_optimal.png" alt="" width="350" height="250">
       
       > [Training Compute-Optimal Large Language Models](https://arxiv.org/abs/2203.15556)
 
    3. **LLM doesn't converge at tokens of optimal computation.**
       - LLM might continue to improve the loss after optimal tokens. 
       - From Llama-7b and Llama-13b's training loss, we can see that continue to improve after 140 B and 260 B parameters.
-      <img src="figs/1.3.llm_doesnt_converge.png" alt="" width="350" height="250">
+      <img src="figs/H1.3.llm_doesnt_converge.png" alt="" width="350" height="250">
       
       > [LLaMA: Open and Efficient Foundation Language Models](https://arxiv.org/abs/2302.13971)
 `
@@ -45,7 +45,7 @@ The repo is far from exclusive currently. Let's work together to improve it! ðŸ’
    1. **The best batch size is a function of loss.**
       - To reach a certain loss, a large batch size requires more computation, a small batch size requires more training steps (i.e., times). The best batch size is a trade-off.
       - Each diagonal line formed by the points represents a training process. The horizontal axis represents the training steps, the vertical axis represents the number of processed tokens, and the color depth represents the loss. The optimal batch size can be considered as the inflection point of each contour line of loss.
-      <img src="figs/2.1.best_batch_size.png" alt="" width="660" height="200">
+      <img src="figs/H2.1.best_batch_size.png" alt="" width="660" height="200">
 
       > [Scaling Laws for Neural Language Models](https://arxiv.org/abs/2001.08361)
    2. **Large batch size allows a large learning rate,**
@@ -58,19 +58,19 @@ The repo is far from exclusive currently. Let's work together to improve it! ðŸ’
       - Cosine scheduler is the prevalent one, which is better than Noam with the same peak learning rate. Noam decreases more sharply. 
       - Below is our experiment for CPM.
 
-       <img src="figs/2.3.scheduler.png" alt="" width="300" height="200"> 
+       <img src="figs/H2.3.scheduler.png" alt="" width="300" height="200"> 
 
    4. **Cosine learning rate's period should be set to the end step.**
       - From 2.3, you might wonder if it is good to keep the learning rate high is good for training. But it's not.
       - When you want to train $N$ steps, it's best to set the period of the scheduler to $N$, not bigger or smaller. 
-      <img src="figs/2.4.scheduler_period.png" alt="" width="500" height="200">
+      <img src="figs/H2.4.scheduler_period.png" alt="" width="500" height="200">
          
 
 3. **Predictable Scaling.**
    1. **Pass rate on human eval can be predicted with 1/10000 compute.**
       - It's important to forecast the model's ability before it is trained. OpenAI GPT-4 proposed the first version of predictable scaling. It estimates the Human-eval's pass rate 
       - Currently, there is no other public result for predicting the downstream metrics for large models. 
-      <img src="figs/3.1.predictable_scaling.png" alt="" width="400" height="250">
+      <img src="figs/H3.1.predictable_scaling.png" alt="" width="400" height="250">
    
 4. **Model Architecture**
    1. **Architectures in a **diverse range have a similar pre-training loss.**
@@ -108,7 +108,7 @@ The repo is far from exclusive currently. Let's work together to improve it! ðŸ’
    2. **Data portion is important.**
       1. Re-mix the dataset in Pile boosts the convergence speed and performance. 
 
-      <img src="figs/5.2.data_portion.png" alt="" width="600" height="200">
+      <img src="figs/H5.2.data_portion.png" alt="" width="600" height="200">
 
       > [DoReMi: Optimizing Data Mixtures Speeds Up Language Model Pretraining](https://arxiv.org/abs/2305.10429)
 
